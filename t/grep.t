@@ -1,24 +1,17 @@
-package Test::Po::Grep;
 use strict;
 use warnings;
-use base qw(Test::Class);
-use Test::More;
-use lib qw[lib t/lib];
-use Popopo::Grep;
-use FindBin;
 use Path::Class;
+use lib glob file(__FILE__)->dir->parent->subdir('t_deps', 'modules', '*', 'lib');
+use Test::More;
+use Test::X1;
+use Popopo::Grep;
 
-sub ng ($;$) {
-    my ($test, $name) = @_;
-    local $Test::Builder::Level = $Test::Builder::Level + 1;
-    Test::More::ok(!$test, $name);
-}
-
-sub _find_refs : Test(68) {
+test {
+    my $c = shift;
     my $refs = {};
     my $urls = {};
     
-    my $dir = dir($FindBin::Bin)->parent->subdir('t_deps', 'data-loc');
+    my $dir = file(__PACKAGE__)->dir->subdir('t_deps', 'data-loc');
     Popopo::Grep->find_refs($dir, sub {
         my ($file_name, $line_number, $msgid, $method_name, $args) = @_;
         
@@ -121,7 +114,7 @@ sub _find_refs : Test(68) {
     $line++;
 
     {
-        ng $refs->{l1};
+        ok not $refs->{l1};
         $line++;
     }
     
@@ -132,7 +125,7 @@ sub _find_refs : Test(68) {
     }
 
     {
-        ng $refs->{l3};
+        ok not $refs->{l3};
         $line++;
     }
 
@@ -178,7 +171,7 @@ sub _find_refs : Test(68) {
     }
     
     {
-        ng $refs->{abc3};
+        ok not $refs->{abc3};
         $line++;
         #ok $refs->{abc3};
         #is $refs->{abc3}->{line_number}, $line++;
@@ -194,14 +187,13 @@ sub _find_refs : Test(68) {
     }
     
     {
-        ng $refs->{abc5};
+        ok not $refs->{abc5};
         $line++;
         #ok $refs->{abc5};
         #is $refs->{abc5}->{line_number}, $line++;
         #is $refs->{abc5}->{method_name}, 'ehloc';
     }
-}
+    done $c;
+} n => 68, name => 'find refs';
 
-__PACKAGE__->runtests;
-
-1;
+run_tests;
