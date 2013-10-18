@@ -1,0 +1,2 @@
+- "../../modules/ooutils" classdiamondgenerator classregistry test objectcachesmethod operationresponse
+- "../../t_deps/modules/test-x1" tests

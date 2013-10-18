@@ -1,16 +1,16 @@
 package Popopo::Entry;
 use strict;
 use warnings;
-use List::Rubyish;
+use List::Ish;
 
 sub new ($;%) {
   my $class = shift;
   my $self = bless {@_}, $class;
   for (qw/msgstrs comments autocomments locations/) {
     if (not defined $self->{$_}) {
-      $self->{$_} = List::Rubyish->new;
+      $self->{$_} = List::Ish->new;
     } elsif (ref $self->{$_} eq 'ARRAY') {
-      $self->{$_} = List::Rubyish->new([@{$self->{$_}}]);
+      $self->{$_} = List::Ish->new([@{$self->{$_}}]);
     }
   }
   if (defined $self->{msgstr}) {
@@ -55,7 +55,7 @@ sub msgstr ($;$) : lvalue {
 
 sub flags ($) {
   my $self = shift;
-  return List::Rubyish->new ([keys %{$self->{flags}}]);
+  return List::Ish->new ([keys %{$self->{flags}}]);
 }
 
 sub add_flag ($$) {
@@ -70,7 +70,7 @@ sub has_flag ($$) {
 
 sub tags ($) {
   my $self = shift;
-  return List::Rubyish->new ([keys %{$self->{tags}}]);
+  return List::Ish->new ([keys %{$self->{tags}}]);
 }
 
 sub add_tag ($$) {
@@ -147,11 +147,11 @@ sub stringify ($) {
 
 =head1 AUTHOR
 
-Wakaba <w@suika.fam.cx>.
+Wakaba <wakaba@suikawiki.org>.
 
 =head1 LICENSE
 
-Copyright 2009 Wakaba <w@suika.fam.cx>.
+Copyright 2009 Wakaba <wakaba@suikawiki.org>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

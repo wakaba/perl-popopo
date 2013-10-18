@@ -1,7 +1,7 @@
 package Popopo::EntrySet;
 use strict;
 use warnings;
-use List::Rubyish;
+use List::Ish;
 
 sub new ($;%) {
   my $class = shift;
@@ -11,7 +11,7 @@ sub new ($;%) {
 } # new
 
 sub entries ($) {
-  return List::Rubyish->new([grep {$_} values %{$_[0]->{entries}}]);
+  return List::Ish->new([grep {$_} values %{$_[0]->{entries}}]);
 } # entries
 
 sub add_entry ($$) {
@@ -85,10 +85,9 @@ respectively.
 
 This module requires Perl 5.8 or later.
 
-This module requires L<List::Rubyish>, which is available from CPAN:
-
-  # cpan
-  cpan> install List::Rubyish
+This module requires L<List::Ish>, which is in the
+<https://github.com/wakaba/perl-ooutils> (a submodule of the Git
+repository which contains this module).
 
 =head1 SEE ALSO
 
@@ -97,18 +96,21 @@ L<Popopo::Parser> - PO parser.
 L<Popopo::Entry>, L<Popopo::Entry::Header>, L<Popopo::Entry::Footer> -
 In-memory representations of PO entries
 
-=head1 DOWNLOAD
+=head1 DEVELOPMENT
 
-The latest version of this module is available from
-<http://suika.fam.cx/popopo/doc/readme>.
+The latest version of this module is available from GitHub:
+<https://github.com/wakaba/perl-popopo>.
+
+Tests are run at Travis CI:
+<https://travis-ci.org/wakaba/perl-popopo>.
 
 =head1 AUTHOR
 
-Wakaba <w@suika.fam.cx>.
+Wakaba <wakaba@suikawiki.org>.
 
 =head1 LICENSE
 
-Copyright 2009 Wakaba <w@suika.fam.cx>.
+Copyright 2009 Wakaba <wakaba@suikawiki.org>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

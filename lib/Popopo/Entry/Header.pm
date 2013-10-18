@@ -2,7 +2,7 @@ package Popopo::Entry::Header;
 use strict;
 use warnings;
 use base qw(Popopo::Entry);
-use List::Rubyish;
+use List::Ish;
 
 my $LangTeam2Lang = {
   english => 'en',
@@ -24,7 +24,7 @@ for (qw/
 sub init_header ($) {
   my $self = shift;
   my @s = split /\x0A/, $self->{msgstrs}->[0];
-  $self->{msgstrs}->[0] = List::Rubyish->new;
+  $self->{msgstrs}->[0] = List::Ish->new;
   bless $self->{msgstrs}->[0], 'Popopo::Entry::Header::Msgstrs';
   $self->{msgstrs}->[0]->add_field ($_) for @s;
   return $self;
@@ -263,7 +263,7 @@ sub plural_type ($;$) {
 } # plural_type
 
 package Popopo::Entry::Header::Msgstrs;
-use base qw(List::Rubyish);
+push our @ISA, qw(List::Ish);
 
 use overload
     '.=' => 'add_field',
@@ -340,11 +340,11 @@ sub stringify ($) {
 
 =head1 AUTHOR
 
-Wakaba <w@suika.fam.cx>.
+Wakaba <wakaba@suikawiki.org>.
 
 =head1 LICENSE
 
-Copyright 2009 Wakaba <w@suika.fam.cx>.
+Copyright 2009 Wakaba <wakaba@suikawiki.org>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
