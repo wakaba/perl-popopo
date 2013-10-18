@@ -1,0 +1,33 @@
+loc_url </test>
+
+loc('abc')
+locale->text('abcd')
+the('locale')->text('abcde')
+
+loc_img('ijk')
+loc_img_abs('ijkl')
+loc_img_src('ijklm')
+loc_img_umt('ijklmn')
+loc_input_image('ijklmno')
+
+loc_n('nmo', 1)
+loc_n('nmop', 2)
+locale->text_n('nmopq', 1)
+locale->text_n('nmopqr', 2)
+the('locale')->text_n('nmopqrs', 2)
+
+notl('l1')
+l('l2')
+not_l('l3')
+
+[% loc('terms.article', 6, loc('ugomemo.eula.hatena.a6')) %]
+
+Hatena.Locale.text('m1')
+Hatena.Locale.text_n('m2')
+
+tloc('abc1');
+hloc('abc2');
+etloc('abc3');
+
+eloc('', 'abc4');
+ehloc('', 'abc5');
