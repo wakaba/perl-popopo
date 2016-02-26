@@ -2,5 +2,5 @@ Scalar::Util~1.43
 Test::More~1.001014
 Term::ANSIColor~4.04
 AnyEvent~7.12
-Path::Class~0.35
+Path::Class~0.36
 Carp~1.38
