@@ -1,5 +1,5 @@
 Module::Metadata~1.000027
-Scalar::Util~1.43
+Scalar::Util~1.44
 Types::Serialiser~1.0
 JSON::XS~3.02
 Module::Runtime~0.014
