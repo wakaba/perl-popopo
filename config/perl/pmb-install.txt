@@ -11,7 +11,7 @@ ExtUtils::CBuilder~0.280224
 Try::Tiny~0.24
 Parse::CPAN::Meta~1.4417
 AnyEvent~7.12
-Term::ANSIColor~4.04
+Term::ANSIColor~4.05
 parent~0.234
 Test::Class~0.50
 version~0.9916
