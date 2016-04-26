@@ -4,7 +4,7 @@ Types::Serialiser~1.0
 JSON::XS~3.02
 Module::Runtime~0.014
 CPAN::Meta~2.150005
-Module::Build~0.4216
+Module::Build~0.4218
 MRO::Compat~0.12
 Perl::OSType~1.009
 ExtUtils::CBuilder~0.280224
