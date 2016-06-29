@@ -9,7 +9,7 @@ MRO::Compat~0.12
 Perl::OSType~1.010
 ExtUtils::CBuilder~0.280224
 Try::Tiny~0.24
-Parse::CPAN::Meta~1.4417
+Parse::CPAN::Meta~1.4421
 AnyEvent~7.12
 Term::ANSIColor~4.05
 parent~0.234
