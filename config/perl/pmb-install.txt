@@ -1,4 +1,4 @@
-Module::Metadata~1.000027
+Module::Metadata~1.000033
 Scalar::Util~1.45
 Types::Serialiser~1.0
 JSON::XS~3.02
