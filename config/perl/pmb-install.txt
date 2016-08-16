@@ -20,7 +20,7 @@ TAP::Harness~3.36
 Term::ANSIColor~4.05
 Test::Class~0.50
 Test::More~1.302052
-Try::Tiny~0.24
+Try::Tiny~0.27
 Types::Serialiser~1.0
 common::sense~3.74
 parent~0.234
