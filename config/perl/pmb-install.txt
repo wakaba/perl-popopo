@@ -18,7 +18,7 @@ Scalar::Util~1.45
 TAP::Harness~3.36
 Term::ANSIColor~4.05
 Test::Class~0.50
-Test::More~1.302056
+Test::More~1.302059
 Try::Tiny~0.27
 Types::Serialiser~1.0
 common::sense~3.74
