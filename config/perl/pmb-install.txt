@@ -1,7 +1,7 @@
 AnyEvent~7.13
 Carp~1.38
 File::Temp~0.2304
-JSON::XS~3.02
+JSON::XS~3.03
 MRO::Compat~0.12
 Module::Runtime~0.014
 Path::Class~0.37
