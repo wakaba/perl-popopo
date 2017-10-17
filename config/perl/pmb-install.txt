@@ -3,7 +3,7 @@ Carp~1.38
 File::Temp~0.2304
 JSON::XS~3.04
 MRO::Compat~0.13
-Module::Runtime~0.015
+Module::Runtime~0.016
 Path::Class~0.37
 Scalar::Util~1.49
 Term::ANSIColor~4.06
